@@ -32,22 +32,22 @@ public class IterationThroughCollections {
         Iterator<Map.Entry<String,String>> iterator = mapToIterate.entrySet().iterator();
         while(iterator.hasNext()){
             Map.Entry<String,String> entry = iterator.next();
-            System.out.println(entry.getKey() + "  "+ entry.getValue()+"\n");
+            System.out.println(entry.getKey() + " -> "+ entry.getValue()+"\n");
         }
     }
 
     public static void interateMapUsingEnhancedForLoop(Map<String,String>mapToIterate){
         for(Map.Entry<String,String> entry : mapToIterate.entrySet()){
-            System.out.println(entry.getKey() + "  "+ entry.getValue()+"\n");
+            System.out.println(entry.getKey() + " -> "+ entry.getValue()+"\n");
         }
 
     }
 
     public static void iterateMapUsingStream(Map<String,String>mapToIterate){
-        mapToIterate.entrySet().stream().forEach(map -> System.out.println(map.getKey()+" "+map.getValue()));
+        mapToIterate.entrySet().stream().forEach(map -> System.out.println(map.getKey()+" -> "+map.getValue()));
     }
 
     public static void iterateMapUsingBuiltInForEach(Map<String,String>mapToIterate){
-        mapToIterate.forEach((key,value) -> System.out.println(key+" "+value+"\n"));
+        mapToIterate.forEach((key,value) -> System.out.println(key+" -> "+value+"\n"));
     }
 }
