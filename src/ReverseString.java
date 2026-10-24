@@ -21,7 +21,6 @@ public class ReverseString {
     }
 
     public static String reverseStringTwoPointer(String str){
-
         char[] chars = str.toCharArray();
         int i = 0;
         int j = chars.length-1;
