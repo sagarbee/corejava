@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class IsPalindromNumberAndString {
 
     public static void main(String [] args){
-    boolean isPalindrome  = isNumberPalindorme(12121);
+    boolean isPalindrome  = isNumberPalindorme(121);
     boolean isStringPalindrome =  isStringPalindrome("POP");
     System.out.println(isPalindrome);
     System.out.println(isStringPalindrome);
@@ -24,10 +24,10 @@ public class IsPalindromNumberAndString {
         return  num == reverse || num == reverse / 10;
     }
 
-    public static boolean isStringPalindrome(String str){
-        String reverse =  ReverseString.reverseStringTwoPointer(str);
+ /*   public static boolean isStringPalindrome(String str){
+        String reverse =  reverseStringTwoPointer(str);
         return str.equalsIgnoreCase(reverse);
-    }
+    }*/
 
     public static String reverseStringTwoPointer(String str){
         char [] charsArray = str.toCharArray();
@@ -41,6 +41,19 @@ public class IsPalindromNumberAndString {
             j--;
         }
         return new String(charsArray);
+    }
+
+    public static boolean isStringPalindrome(String str){
+        int i = 0;
+        int j = str.length()-1;
+        while(i<j){
+            if(str.charAt(i) != str.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
     }
 
 }
