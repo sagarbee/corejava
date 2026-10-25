@@ -1,10 +1,24 @@
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class IterationThroughCollections {
 
     public static void main(String[] args) {
+
+        /*
+        * ArrayList
+        *
+        * */
+
+        List<String> iterateArrayListUsingStream = Arrays.asList("Sagar", "Santosh", "More");
+        List<String> iterateArrayListUsingLoops = Arrays.asList("element1", "element2", "element3");
+
+        iterateArrayList(iterateArrayListUsingStream);
+        iterateArrayListUsingLoops(iterateArrayListUsingLoops);
+
+        /*
+        * MAP
+        *
+        * */
 
         Map<String,String> map = new HashMap<String, String>();
         map.put("interateMapUsingIterator-1","Val1");
@@ -28,6 +42,47 @@ public class IterationThroughCollections {
         iterateMapUsingBuiltInForEach(map4);
     }
 
+
+    /*
+     * ArrayList
+     *
+     * */
+
+    public static void iterateArrayList(List<String> arrayList){
+        arrayList.forEach(System.out::println);
+    }
+
+    public static void iterateArrayListUsingLoops(List<String>arrayList){
+
+        for (int i = 0; i< arrayList.size();i++){
+            System.out.println("For loop :: "+arrayList.get(i));
+        }
+
+        for (String element : arrayList){
+            System.out.println("Enhanced For loop :: "+element);
+        }
+        int i = 0;
+        while (i<arrayList.size()){
+            System.out.println("While loop :: "+arrayList.get(i));
+            i++;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /*
+     * MAP
+     *
+     * */
     public static void interateMapUsingIterator(Map<String,String>mapToIterate){
         Iterator<Map.Entry<String,String>> iterator = mapToIterate.entrySet().iterator();
         while(iterator.hasNext()){
